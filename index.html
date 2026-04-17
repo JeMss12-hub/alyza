@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Alyza Joy Belga | Cloudinary Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 30% 10%, #1a0b2e, #0a0418);
+            color: #f0eaff;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 2rem 2.5rem;
+            background: rgba(10, 5, 25, 0.65);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b1e6b, #1f0b3a);
+            padding: 0.35rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #d9b4ff;
+            border: 1px solid #a855f7aa;
+            margin-bottom: 1.2rem;
+        }
+
+        h1 {
+            font-size: 3.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f5f0ff, #c084fc, #a855f7);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #cdb4ff;
+            font-weight: 400;
+            border-bottom: 2px dashed #a855f880;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.8rem;
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .card-modern {
+            background: rgba(18, 8, 35, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            padding: 2rem;
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            transition: all 0.25s;
+            box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-modern:hover {
+            border-color: #c084fc;
+            box-shadow: 0 15px 30px -10px rgba(168, 85, 247, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .card-modern h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid #c084fc;
+            padding-left: 1rem;
+            color: #f0e6ff;
+        }
+
+        .card-modern p {
+            color: #e2d6ff;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .gallery-item {
+            background: #110a22;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #4a2b7a;
+            box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.6);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            border-color: #c084fc;
+            box-shadow: 0 18px 28px -12px #a855f7;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .img-caption {
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.8rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: #d1b3ff;
+            font-weight: 500;
+        }
+
+        .file-zone {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #6b21a5, #9333ea);
+            padding: 0.85rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.25s;
+            box-shadow: 0 6px 14px rgba(139, 92, 246, 0.4);
+            font-size: 0.95rem;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(105deg, #7e22ce, #a855f7);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 22px -6px #a855f7;
+        }
+
+        .file-note {
+            background: rgba(168, 85, 247, 0.12);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            border-left: 2px solid #c084fc;
+        }
+
+        .explanation-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-card {
+            flex: 1;
+            min-width: 170px;
+            background: #110a22cc;
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            text-align: center;
+            border: 1px solid #6b46a0;
+            backdrop-filter: blur(4px);
+            transition: all 0.2s;
+        }
+
+        .tech-card:hover {
+            background: #1f123b;
+            border-color: #c084fc;
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+            color: #d9b4ff;
+        }
+
+        .cloud-note {
+            background: rgba(128, 90, 213, 0.15);
+            border-radius: 2rem;
+            padding: 0.6rem 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            border-left: 3px solid #a855f7;
+        }
+
+        .upload-instructions {
+            background: #1f123b;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid #a855f7;
+        }
+
+        .upload-instructions code {
+            background: #0a0418;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #d9b4ff;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding: 2rem 1rem;
+            text-align: center;
+            background: rgba(8, 3, 20, 0.7);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #5b3b8c;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .card-modern {
+                padding: 1.4rem;
+            }
+            .gallery-grid {
+                gap: 1rem;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            background: #0c0520;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a855f7;
+            border-radius: 20px;
+        }
+
+        hr {
+            border-color: #6b46a0;
+            margin: 0.8rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="hero-badge">☁️ CLOUDINARY FILE SERVER ☁️</div>
+    <h1>Alyza Joy Belga</h1>
+    <div class="subtitle">BSIT III — F3 | Cloud-Powered Portfolio</div>
+    <p style="margin-top: 1.2rem; max-width: 600px; margin-left: auto; margin-right: auto; color: #cdb8ff;">
+        Web Server (Vercel) + File Server (Cloudinary) · Dynamic Media Delivery
+    </p>
+</header>
+
+<main class="container">
+    <div class="cards-grid">
+        
+        <!-- About Me Section -->
+        <section class="card-modern">
+            <h2>✨ About Me</h2>
+            <p>
+                I'm Alyza, a passionate BSIT student exploring cloud architecture and modern web development. 
+                This portfolio demonstrates a <strong>web server (Vercel)</strong> communicating with a 
+                <strong>file server (Cloudinary)</strong>. All images are stored in Cloudinary's cloud 
+                and delivered via optimized CDN links.
+            </p>
+            <div style="margin-top: 1.2rem; display: flex; gap: 12px; flex-wrap: wrap;">
+                <span style="background:#23153c; padding:5px 14px; border-radius:40px;">💜 BSIT Student</span>
+                <span style="background:#23153c; padding:5px 14px; border-radius:40px;">☁️ Cloudinary Expert</span>
+                <span style="background:#23153c; padding:5px 14px; border-radius:40px;">🎨 Creative Developer</span>
+            </div>
+        </section>
+
+        <!-- Cloudinary Gallery - REPLACE THESE URLs WITH YOUR CLOUDINARY IMAGES -->
+        <section class="card-modern">
+            <h2>🖼️ My Cloudinary Gallery</h2>
+            <p style="margin-bottom: 0.75rem;">
+                ✅ Images served directly from <strong>Cloudinary</strong> (file server). 
+                Replace the URLs below with your actual Cloudinary image links.
+            </p>
+            <div class="gallery-grid">
+                <!-- 🔴 IMPORTANT: Replace these with YOUR Cloudinary image URLs -->
+                <!-- Your Cloudinary URL format: https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/YOUR_IMAGE_ID -->
+                
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/dj0jlmtwf/image/upload/v1776431259/61cf679c-c7cc-415a-aace-816039f510e7_at2abr.jpg" alt="Cloudinary Asset 1" loading="lazy">
+                    <div class="img-caption">📁 Replace with your image</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/dj0jlmtwf/image/upload/v1776431258/66b7b388-590f-4763-8869-b25bc32adc21_tuh7lp.jpg" alt="Cloudinary Asset 2" loading="lazy">
+                    <div class="img-caption">🌌 Replace with your image</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/dj0jlmtwf/image/upload/v1776431257/raf_360x360_075_t_fafafa_ca443f4786_zcud9c.jpg" alt="Cloudinary Asset 3" loading="lazy">
+                    <div class="img-caption">⚡ Replace with your image</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/dj0jlmtwf/image/upload/v1776431258/105b67f5-2b0d-4afb-b5a6-db41387571c0_nf7eyo.jpg" alt="Cloudinary Asset 4" loading="lazy">
+                    <div class="img-caption">📸 Replace with your image</div>
+                </div>
+            </div>
+            
+           
+            
+
+       
+
+        <!-- Architecture Explanation -->
+        <section class="card-modern">
+       
+            <div class="explanation-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🚀</div>
+                    <h3>Web Server (Vercel)</h3>
+                    <p>Hosts HTML/CSS, serves the portfolio frontend globally with edge network.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">☁️</div>
+                    <h3>File Server (Cloudinary)</h3>
+                    <p>Stores images, videos, and files. Provides CDN optimization and transformations.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔄</div>
+                    <h3>Integration Flow</h3>
+                    <p>Browser loads page → Fetches images directly from Cloudinary → Fast, optimized delivery</p>
+                </div>
+            </div>
+            <hr>
+           
+        </section>
+
+        <!-- Why This Matters -->
+       
+        
+        <!-- Personalized Quote -->
+        <section class="card-modern" style="text-align: center; border-color: #8b5cf6;">
+            <p style="font-style: italic; font-size: 1rem; color: #e2c8ff;">
+                “Cloud-native architecture — where Vercel meets Cloudinary for seamless media delivery.”
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">— Alyza Joy Belga, BSIT-III</p>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Alyza Joy Belga — BSIT III - F3 | Web Server + Cloudinary File Server</p>
+    <p style="font-size: 0.7rem; margin-top: 0.5rem;">💜 powered by Vercel + Cloudinary | Purple Edition 💜</p>
+</footer>
+
+</body>
+</html>
